@@ -17,7 +17,7 @@ class AppTheme {
 
   AppTheme({
      this.selectedColor = 0
-  });
+  }): assert ( selectedColor >= 0 && selectedColor <= _colorThemes.length- 1, 'Color is only 0 - 6');
 
   ThemeData theme() {
     return ThemeData(
