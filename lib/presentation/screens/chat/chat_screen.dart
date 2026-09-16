@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/her_message_bubble.dart';
+import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
+import 'package:yes_no_app/presentation/widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget{
   
@@ -33,13 +36,23 @@ class _ChatView extends StatelessWidget {
     return SafeArea(
       child: Column( 
         children: [
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: itemBuilder)),
-          )),
-          Text('Hola Mundo ')
+
+
+          Expanded(child: ListView.builder(
+              padding: EdgeInsets.all(20),
+              itemCount: 100,
+              itemBuilder: ((context, index) {
+              
+                return ( index %2 == 0)
+                ? HerMessageBubble()  
+                : MyMessageBubble();
+              
+              }))),
+
+          MessageFieldBox()
+        
         ],
-      ),
+      )
     );
   }
 }
