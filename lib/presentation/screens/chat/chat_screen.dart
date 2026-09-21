@@ -45,6 +45,7 @@ class _ChatView extends StatelessWidget {
 
 
           Expanded(child: ListView.builder(
+              controller:  chatProvider.chatController,
               padding: EdgeInsets.all(20),
               itemCount: chatProvider.messageList.length,
               itemBuilder: ((context, index) {
