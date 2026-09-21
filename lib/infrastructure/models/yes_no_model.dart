@@ -1,6 +1,8 @@
 
 import 'dart:convert';
 
+import 'package:yes_no_app/domain/entities/message.dart';
+
 class YesNoModel {
 
   String answer;
@@ -20,4 +22,11 @@ class YesNoModel {
     image: json['image']
   );
 
+  Message toMessageEntity () {
+    return Message(
+      text: answer == 'yes' ? 'si' : 'no', 
+      fromWho: FromWho.hers,
+      imageUrl: image
+    );
+  }
 }

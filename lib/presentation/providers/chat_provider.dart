@@ -46,5 +46,7 @@ class ChatProvider extends ChangeNotifier{
       curve: Curves.easeOut,
     );
   }
+
+ 
   
 }
